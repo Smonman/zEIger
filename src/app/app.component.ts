@@ -8,7 +8,7 @@ import * as deAt from "@angular/common/locales/de-AT"
     selector: "app-root",
     imports: [RouterOutlet, HeaderComponent],
     templateUrl: "./app.component.html",
-    styleUrl: "./app.component.scss"
+    styleUrl: "./app.component.css"
 })
 export class AppComponent implements OnInit {
     title = "zEIger";

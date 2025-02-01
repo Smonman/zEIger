@@ -7,7 +7,7 @@ import {RouterLink} from "@angular/router";
         RouterLink
     ],
     templateUrl: "./dashboard.component.html",
-    styleUrl: "./dashboard.component.scss"
+    styleUrl: "./dashboard.component.css"
 })
 export class DashboardComponent {
 

@@ -1,6 +1,4 @@
 <main>
     <h1>Timer</h1>
-    <ng-container *ngIf="this.currentDuration !== null">
-        <p>{{ this.currentDuration.toLocaleString("de-AT", {timeStyle: "short"}) }}</p>
-    </ng-container>
+    <p>{{ this.getCurrentTimeAsDate() | date:'mm:ss' }}</p>
 </main>

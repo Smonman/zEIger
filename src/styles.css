@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "tailwindcss";
+
+@theme {
+    --color-supernova-50: #fefae8;
+    --color-supernova-100: #fef2c3;
+    --color-supernova-200: #fee78a;
+    --color-supernova-300: #fdd847;
+    --color-supernova-400: #facc15;
+    --color-supernova-500: #eabd08;
+    --color-supernova-600: #caa204;
+    --color-supernova-700: #a18207;
+    --color-supernova-800: #856d0e;
+    --color-supernova-900: #715e12;
+    --color-supernova-950: #423606;
+
+    --color-sulu-50: #f6fee7;
+    --color-sulu-100: #eafccb;
+    --color-sulu-200: #d7f99d;
+    --color-sulu-300: #bef264;
+    --color-sulu-400: #a5e635;
+    --color-sulu-500: #89cc16;
+    --color-sulu-600: #6ca30d;
+    --color-sulu-700: #547c0f;
+    --color-sulu-800: #456212;
+    --color-sulu-900: #3c5314;
+    --color-sulu-950: #1f2e05;
+
+    --color-picton-blue-50: #f0faff;
+    --color-picton-blue-100: #e0f5fe;
+    --color-picton-blue-200: #bae8fd;
+    --color-picton-blue-300: #7dd5fc;
+    --color-picton-blue-400: #38bdf8;
+    --color-picton-blue-500: #0ea6e9;
+    --color-picton-blue-600: #028ac7;
+    --color-picton-blue-700: #0370a1;
+    --color-picton-blue-800: #075e85;
+    --color-picton-blue-900: #0c506e;
+    --color-picton-blue-950: #083549;
+
+    --color-carnation-50: #fef2f2;
+    --color-carnation-100: #fee2e2;
+    --color-carnation-200: #fecaca;
+    --color-carnation-300: #fca5a5;
+    --color-carnation-400: #f87171;
+    --color-carnation-500: #ef4444;
+    --color-carnation-600: #dc2626;
+    --color-carnation-700: #b91c1c;
+    --color-carnation-800: #991b1b;
+    --color-carnation-900: #7f1d1d;
+    --color-carnation-950: #450a0a;
+
+    --color-primary: --color-supernova-600;
+    --color-secondary: --color-sulu-400;
+    --color-info: --color-picton-blue-400;
+    --color-warning: --color-supernova-400;
+    --color-error: --color-carnation-400;
+}
+
+h1 {
+    @apply text-5xl font-extrabold dark:text-white;
+}
+
+h2 {
+    @apply text-4xl font-bold dark:text-white
+}
+
+h3 {
+    @apply text-3xl font-bold dark:text-white;
+}
+
+h4 {
+    @apply text-2xl font-bold dark:text-white;
+}
+
+h5 {
+    @apply text-xl font-bold dark:text-white;
+}
+
+h6 {
+    @apply text-lg font-bold dark:text-white;
+}
+
+main {
+    @apply p-3;
+}
+
+body {
+    @apply bg-supernova-100;
+}
