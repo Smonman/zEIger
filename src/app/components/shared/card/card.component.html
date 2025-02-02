@@ -1,0 +1,24 @@
+<ng-container *ngIf="this.type === CardTypeEnum.STATIC">
+    <div class="rounded-xl shadow-md p-3">
+        <app-card-content [alt]="this.alt" [description]="this.description" [imageSrc]="this.imageSrc"
+                          [title]="this.title">
+            <ng-content></ng-content>
+        </app-card-content>
+    </div>
+</ng-container>
+<ng-container *ngIf="this.type === CardTypeEnum.BUTTON">
+    <button (click)="this.onClick($event)" class="block rounded-xl shadow-md p-3">
+        <app-card-content [alt]="this.alt" [description]="this.description" [imageSrc]="this.imageSrc"
+                          [title]="this.title">
+            <ng-content></ng-content>
+        </app-card-content>
+    </button>
+</ng-container>
+<ng-container *ngIf="this.type === CardTypeEnum.LINK">
+    <a [queryParams]="this.queryParams" [routerLink]="this.routerLink" class="block rounded-xl shadow-md p-3">
+        <app-card-content [alt]="this.alt" [description]="this.description" [imageSrc]="this.imageSrc"
+                          [title]="this.title">
+            <ng-content></ng-content>
+        </app-card-content>
+    </a>
+</ng-container>

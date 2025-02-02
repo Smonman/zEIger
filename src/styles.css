@@ -59,27 +59,33 @@
 }
 
 h1 {
-    @apply text-5xl font-extrabold dark:text-white;
+    @apply text-5xl font-extrabold;
+    @apply mt-2 mb-1;
 }
 
 h2 {
-    @apply text-4xl font-bold dark:text-white
+    @apply text-4xl font-bold;
+    @apply mt-2.5 mb-1.5;
 }
 
 h3 {
-    @apply text-3xl font-bold dark:text-white;
+    @apply text-3xl font-bold;
+    @apply mt-3 mb-2;
 }
 
 h4 {
-    @apply text-2xl font-bold dark:text-white;
+    @apply text-2xl font-bold;
+    @apply mt-3.5 mb-2.5;
 }
 
 h5 {
-    @apply text-xl font-bold dark:text-white;
+    @apply text-xl font-bold;
+    @apply mt-3.5 mb-2.5;
 }
 
 h6 {
-    @apply text-lg font-bold dark:text-white;
+    @apply text-lg font-bold;
+    @apply mt-3.5 mb-2.5;
 }
 
 main {

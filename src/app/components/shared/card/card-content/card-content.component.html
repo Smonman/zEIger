@@ -1,0 +1,14 @@
+<div [ngClass]="{'justify-center': this.title && this.description === null}"
+     class="flex flex-col flex-nowrap items-stretch gap-2"
+>
+    <ng-container *ngIf="this.imageSrc !== null">
+        <div class="relative w-full h-24">
+            <img [alt]="this.alt" [ngSrc]="this.imageSrc" class="rounded-xl" fill style="object-fit: cover">
+        </div>
+    </ng-container>
+    <div class="font-semibold">{{ this.title }}</div>
+    <ng-container *ngIf="this.description !== null">
+        <div>{{ description }}</div>
+    </ng-container>
+    <ng-content></ng-content>
+</div>

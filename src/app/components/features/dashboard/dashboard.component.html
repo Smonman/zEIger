@@ -1,20 +1,16 @@
 <main>
-    <h2>Dashboard</h2>
-    <div class="grid grid-cols-2 gap-2">
-        <a [queryParams]="{time: '123'}" [routerLink]="['/timer']">
-            <div>
-                Timer 1
-            </div>
-        </a>
-        <a [queryParams]="{time: '123'}" [routerLink]="['/timer']">
-            <div class="bg-red-200">
-                Timer 2
-            </div>
-        </a>
-        <a [queryParams]="{time: '123'}" [routerLink]="['/timer']">
-            <div>
-                Timer 3
-            </div>
-        </a>
+    <h3>Dashboard</h3>
+    <div class="grid grid-cols-2 gap-5">
+
+        <app-card [queryParams]="{time: '123'}" [routerLink]="['/timer']" [type]="CardTypeEnum.LINK"
+                  imageSrc="images/btn.png"
+                  title="Timer 1">
+        </app-card>
+        <app-card [queryParams]="{time: '123'}" [routerLink]="['/timer']" [type]="CardTypeEnum.LINK"
+                  title="Timer 2">
+        </app-card>
+        <app-card [queryParams]="{time: '123'}" [routerLink]="['/timer']" [type]="CardTypeEnum.LINK"
+                  title="Timer 3">
+        </app-card>
     </div>
 </main>

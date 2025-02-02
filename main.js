@@ -8,25 +8,28 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 300,
         height: 400,
+        frame: false,
         webPreferences: {
-            nodeIntegration: true,
+            nodeIntegration: false,
             contextIsolation: false,
-            enableRemoteModule: true,
+            enableRemoteModule: false,
         },
         titleBarStyle: "hidden",
         titleBarOverlay: {
-            color: '#2f3241',
-            symbolColor: '#74b1be',
+            color: "#eafccb",
+            symbolColor: "#f6fee7",
             height: 20
         },
+        center: true,
         resizable: false,
         movable: true,
         maximizable: false,
+        fullscreenable: false
     });
 
     mainWindow.loadURL(
         url.format({
-            pathname: path.join(__dirname, `/dist/zEIger/browser/index.html`),
+            pathname: path.join(__dirname, "/dist/zEIger/browser/index.html"),
             protocol: "file:",
             slashes: true,
         })
@@ -48,3 +51,14 @@ app.on("window-all-closed", function () {
 app.on("activate", function () {
     if (mainWindow === null) createWindow();
 });
+
+/**
+ * Hot reloading
+ *
+ * @see https://flaviocopes.com/electron-hot-reload/
+ */
+try {
+    require('electron-reloader')(module)
+} catch (_) {
+    // ignored
+}
