@@ -9,6 +9,6 @@ import {RouterLink} from "@angular/router";
     templateUrl: "./header.component.html",
     styleUrl: "./header.component.css"
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class HeaderComponent {
-
 }

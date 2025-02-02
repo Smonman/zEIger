@@ -19,7 +19,7 @@ export class CardComponent {
     @Input()
     public type: CardTypeEnum = CardTypeEnum.STATIC;
     @Input({required: true})
-    public title: string = "";
+    public title = "";
     @Input()
     public description: string | null = null;
     @Input()
@@ -27,7 +27,7 @@ export class CardComponent {
     @Input()
     public alt: string | null = null;
     @Input()
-    public routerLink: any[] | string | UrlTree | null = null;
+    public routerLink: any[] | string | UrlTree | null = null; // eslint-disable-line @typescript-eslint/no-explicit-any
     @Input()
     public queryParams: Params | null = null;
     @Output()

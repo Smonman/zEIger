@@ -13,7 +13,7 @@ import {NgClass, NgIf, NgOptimizedImage} from "@angular/common";
 })
 export class CardContentComponent {
     @Input({required: true})
-    public title: string = "";
+    public title = "";
 
     @Input()
     public description: string | null = null;

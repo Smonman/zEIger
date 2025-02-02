@@ -14,15 +14,16 @@ export class TimerComponent implements OnInit, OnDestroy {
 
     private startTime: number | null = null;
     private intervalId: number | null = null;
-    private currentTime: number = 0;
+    private currentTime = 0;
 
     public constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     }
 
     ngOnInit(): void {
-        this.startTime = Number(this.activatedRoute.snapshot.queryParamMap.get("time"));
-        if (this.startTime === null || Number.isNaN(this.startTime)) {
-            this.router.navigate(["/dashboard"]).then();
+        const queryParam: string | null = this.activatedRoute.snapshot.queryParamMap.get("time");
+        this.startTime = Number(queryParam);
+        if (queryParam === null || Number.isNaN(this.startTime)) {
+            void this.router.navigate(["/dashboard"]);
         }
         this.currentTime = this.startTime;
         this.startTimer();
