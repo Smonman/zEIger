@@ -1,19 +1,18 @@
-import {AfterViewChecked, AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from "@angular/core";
+import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from "@angular/core";
 import {DigitComponent} from "./digit/digit.component";
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
     selector: "app-clock",
     imports: [
         DigitComponent,
-        NgForOf
+        NgForOf,
+        NgIf
     ],
     templateUrl: "./clock.component.html",
     styleUrl: "./clock.component.css"
 })
-export class ClockComponent implements OnInit, AfterViewInit, AfterViewChecked {
-    @Input({alias: "size"})
-    public sizeHint = -1;
+export class ClockComponent implements OnInit, AfterViewInit {
 
     @Input({required: true})
     public maxSeconds = 0;
@@ -22,8 +21,8 @@ export class ClockComponent implements OnInit, AfterViewInit, AfterViewChecked {
     public clock: ElementRef<HTMLDivElement> | null = null;
 
     protected size = 0;
-
     protected digitCount = 0;
+    protected isReady = false;
 
     ngOnInit() {
         this.digitCount = Math.ceil(this.maxSeconds / 10);
@@ -31,19 +30,8 @@ export class ClockComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
     ngAfterViewInit(): void {
         if (this.clock !== null) {
-            if (this.sizeHint >= 0) {
-                this.clock.nativeElement.style.width = `${this.sizeHint}px`;
-                this.clock.nativeElement.style.height = `${this.sizeHint}px`;
-            } else {
-                this.clock.nativeElement.style.width = "100%";
-                this.clock.nativeElement.style.height = "100%";
-            }
-        }
-    }
-
-    ngAfterViewChecked(): void {
-        if (this.clock !== null) {
             this.size = this.clock.nativeElement.clientWidth;
+            this.isReady = true;
         }
     }
 

@@ -3,7 +3,7 @@
     <ng-container *ngIf="this.startTime">
         <p>{{ this.getCurrentTimeAsDate() | date:'mm:ss' }}</p>
         <div class="flex flex-col justify-center">
-            <app-clock [maxSeconds]="this.startTime" [size]="256"></app-clock>
+            <app-clock [maxSeconds]="this.startTime"></app-clock>
         </div>
     </ng-container>
 </main>
