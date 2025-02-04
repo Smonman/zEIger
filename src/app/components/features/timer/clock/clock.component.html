@@ -1,0 +1,8 @@
+<div #clock class="relative aspect-square">
+    <div class="absolute left-0 right-0 top-0 bottom-0 -z-10 bg-white"></div>
+    <ng-container *ngFor="let digit of this.getDigits() index as i;">
+        <app-digit [digit]="digit" [offset]="-this.getOffset()" [rotation]="this.getRotation(i)"
+                   class="z-10"></app-digit>
+        <!-- TODO: add tick marks -->
+    </ng-container>
+</div>

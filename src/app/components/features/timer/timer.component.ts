@@ -1,18 +1,21 @@
 import {Component, OnDestroy, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
-import {DatePipe} from "@angular/common";
+import {DatePipe, NgIf} from "@angular/common";
+import {ClockComponent} from "./clock/clock.component";
 
 @Component({
     selector: "app-timer",
     imports: [
-        DatePipe
+        DatePipe,
+        ClockComponent,
+        NgIf
     ],
     templateUrl: "./timer.component.html",
     styleUrl: "./timer.component.css"
 })
 export class TimerComponent implements OnInit, OnDestroy {
 
-    private startTime: number | null = null;
+    protected startTime: number | null = null;
     private intervalId: number | null = null;
     private currentTime = 0;
 

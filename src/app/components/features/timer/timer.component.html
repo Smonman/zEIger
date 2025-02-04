@@ -1,4 +1,9 @@
 <main>
     <h3>Timer</h3>
-    <p>{{ this.getCurrentTimeAsDate() | date:'mm:ss' }}</p>
+    <ng-container *ngIf="this.startTime">
+        <p>{{ this.getCurrentTimeAsDate() | date:'mm:ss' }}</p>
+        <div class="flex flex-col justify-center">
+            <app-clock [maxSeconds]="this.startTime" [size]="256"></app-clock>
+        </div>
+    </ng-container>
 </main>
